@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "sourceMap": true,
+    "baseUrl": "src",
+    "outDir": "dist",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@controllers/*": ["controllers/*"],
+      "@models": ["models/index"],
+      "@routes/*": ["routes/*"],
+      "@services/*": ["services/*"],
+      "@utils/*": ["utils/*"],
+      "@commons/*": ["commons/*"],
+      "@middleware/*": ["middleware/*"],
+    }
+  },
+  "exclude": ["node_modules"]
+}

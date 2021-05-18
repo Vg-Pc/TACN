@@ -1,0 +1,2971 @@
+{
+	"info": {
+		"_postman_id": "f27c80f0-d3c3-498d-8cab-38b07232a094",
+		"name": "TACN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone_number\" : \"0962583782\",\n    \"password\" : \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users/logout",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getListUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users?search=&page=1&role_id=&status=&province_id=&from_date=1617532076&to_date",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "role_id",
+									"value": ""
+								},
+								{
+									"key": "status",
+									"value": ""
+								},
+								{
+									"key": "province_id",
+									"value": ""
+								},
+								{
+									"key": "from_date",
+									"value": "1617532076"
+								},
+								{
+									"key": "to_date",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/55",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserInfo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users/info?id =55",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"info"
+							],
+							"query": [
+								{
+									"key": "id ",
+									"value": "55"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admin\",\n    \"phone_number\": \"0957654362\",\n    \"address\": \"hn\",\n    \"password\": \"123456\",\n    \"date_of_birth\": 1615350657,\n    \"expired_at\": 1615350657,\n    \"gender\": 1,\n    \"email\": \"admin@gmail.com\",\n    \"role_id\": 1,\n    \"province_id\": 201\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"name\": \"admin\",\n    \"phone_number\": \"0957654361\",\n    \"address\": \"hn\",\n    \"password\": \"123456\",\n    \"date_of_birth\": 1615350657,\n    \"expired_at\": 1615350657,\n    \"gender\": 1,\n    \"email\": \"admin@gmail.com\",\n    \"role_id\": 1,\n    \"province_id\": 201\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/users/reset-password",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [\n        6\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "getListCustomer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/customer?search=&page=&province_id=",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"customer"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "province_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/customer/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admin\",\n    \"phone_number\": \"0957654361\",\n    \"address\": \"hn\",\n    \"tax_code\": \"123456\",\n    \"date_of_birth\": 1615350657,\n    \"representative\": \"nguyen van a\",\n    \"position\": \"leader\",\n    \"email\": \"admin@gmail.com\",\n    \"province_id\": 201\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/customer",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"name\": \"admin\",\n    \"phone_number\": \"0957654361\",\n    \"address\": \"hn\",\n    \"tax_code\": \"123456\",\n    \"date_of_birth\": 1615350657,\n    \"representative\": \"nguyen van a\",\n    \"position\": \"leader\",\n    \"email\": \"admin@gmail.com\",\n    \"province_id\": 201\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/customer",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [\n        4\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/customer",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "getListSupplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/supplier?search=&page=&province_id=",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"supplier"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "province_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSupplierDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/supplier/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"supplier",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSupplier",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admin\",\n    \"phone_number\": \"0962583787\",\n    \"address\": \"hn\",\n    \"tax_code\": \"123456\",\n    \"email\": \"admin@gmail.com\",\n    \"province_id\": 201\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/supplier",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSupplier",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"admin\",\n    \"phone_number\": \"0957654361\",\n    \"address\": \"hn\",\n    \"tax_code\": \"1234562\",\n    \"email\": \"admin@gmail.com\",\n    \"province_id\": 201\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/supplier",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSupplier",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/supplier",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "getListStore",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/store?search=&page=&province_id=",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"store"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "province_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStoreDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/store/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"store",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createStore",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"kho Hn\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/store",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStore",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"admin\",\n    \"phone_number\": \"0957654361\",\n    \"address\": \"hn\",\n    \"tax_code\": \"1234562\",\n    \"email\": \"admin@gmail.com\",\n    \"province_id\": 201\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/supplier",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStore",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/store",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductCategory",
+			"item": [
+				{
+					"name": "getListProductCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product-category?search=&page=&province_id=",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product-category"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "province_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductCategoryDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product-category/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product-category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProductCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"hang kho\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product-category",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProductCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"hang kho\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product-category",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProductCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product-category",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product-category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "getListProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/product?search=&page=",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product/17",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"cám gà\",\n    \"unit_id\": 6,\n    \"product_category_id\": 2,\n    \"retail_price\": 60000,\n    \"wholesale_price\": 40000,\n    \"import_price\": 100000,\n    \"images\": [\n        \"https://www.google.com/imgres?imgurl=https%3A%2F%2Fconco-cms-production.s3-ap-southeast-1.amazonaws.com%2Fiblock%2F3ee%2F3ee083f3448818982168dd247b10059d.png&imgrefurl=https%3A%2F%2Fconco.com.vn%2Fsan-pham-chi-tiet%2Fcon-co-c42&tbnid=pNVnYcb0AusGqM&vet=12ahUKEwj9h5eTw77vAhUxQPUHHeHmBnQQMygDegUIARCTAQ..i&docid=NqLrlBvQfg656M&w=500&h=654&q=c%C3%A1m%20c%C3%B2&ved=2ahUKEwj9h5eTw77vAhUxQPUHHeHmBnQQMygDegUIARCTAQ\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 23,\n    \"name\": \"cám lợn\",\n    \"unit_id\": 1,\n    \"product_category_id\": 4,\n    \"retail_price\": 60000,\n    \"wholesale_price\": 40000,\n    \"import_price\": 100000,\n    \"images\": [\n        \"http://3.1.13.10:8700/tacn161703901556325.jpeg\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [\n        17,\n        18\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/product",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Province",
+			"item": [
+				{
+					"name": "getListProvince",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/province?search=",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"province"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "getListRole",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/role?search=",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"role"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Goods",
+			"item": [
+				{
+					"name": "receiveGoods",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"note\": \"\",\n    \"paid_price\": 100000,\n    \"supplier_id\": 2,\n    \"store_id\": 9,\n    \"payment_type\": 1,\n    \"products\": [\n        {\n            \"id\": 19,\n            \"price\": 900,\n            \"amount\": 30,\n            \"expired_at\":null\n        },\n        {\n            \"id\": 22,\n            \"price\": 500,\n            \"amount\": 12,\n            \"expired_at\": 1618119433\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/goods/receive",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"goods",
+								"receive"
+							]
+						},
+						"description": "PAYMENT_TYPE = { CASH: 1, TRANSFER: 2, }"
+					},
+					"response": []
+				},
+				{
+					"name": "returnGoods",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"note\": \"\",\n    \"first_discount\": 10,\n    \"second_discount\": 5,\n    \"staff_id\": 37,\n    \"customer_id\": 3,\n    \"store_id\": 2,\n    \"products\": [\n        {\n            \"code\": \"POS371518373939\",\n            \"price\": 90000,\n            \"amount\": 1,\n            \"discount\": 0\n        },\n        {\n            \"code\": \"POS371518374373\",\n            \"price\": 100000,\n            \"amount\": 2,\n            \"discount\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/goods/return",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"goods",
+								"return"
+							]
+						},
+						"description": "PAYMENT_TYPE = { CASH: 1, TRANSFER: 2, }"
+					},
+					"response": []
+				},
+				{
+					"name": "getListProductOfStore",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/goods/product-of-store?search=&page=&from_date=&to_date&product_category=&store_id=",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"goods",
+								"product-of-store"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "from_date",
+									"value": ""
+								},
+								{
+									"key": "to_date",
+									"value": null
+								},
+								{
+									"key": "product_category",
+									"value": ""
+								},
+								{
+									"key": "store_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "getListOrder",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/order?search=&page=&from_date=&to_date&store_id=13&sale_type=3&staff_id=55",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "from_date",
+									"value": ""
+								},
+								{
+									"key": "to_date",
+									"value": null
+								},
+								{
+									"key": "store_id",
+									"value": "13"
+								},
+								{
+									"key": "sale_type",
+									"value": "3",
+									"description": "1 : bán sỉ , 2: bán lẻ, 3: trả hàng"
+								},
+								{
+									"key": "staff_id",
+									"value": "55"
+								}
+							]
+						},
+						"description": "PAYMENT_TYPE = { CASH: 1, TRANSFER: 2, };\n\nSALE_TYPE = { WHOLESALE: 1, RETAIL: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/order/64",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"order",
+								"64"
+							]
+						},
+						"description": "PAYMENT_TYPE = { CASH: 1, TRANSFER: 2, };\n\nSALE_TYPE = { WHOLESALE: 1, RETAIL: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"note\": \"\",\n    \"first_discount\": 10,\n    \"second_discount\": 5,\n    \"paid_price\": 100000,\n    \"staff_id\": 41,\n    \"customer_id\": 3,\n    \"store_id\": 9,\n    \"sale_type\": 1,\n    \"payment_type\": 1,\n    \"expired_at\": 1616552596,\n    \"products\": [\n        {\n            \"product_code\": \"TACN587055589538\",\n            \"price\": 90000,\n            \"amount\": 200,\n            \"discount\": 0\n        },\n        {\n            \"product_code\": \"TACN764653763627\",\n            \"price\": 100000,\n            \"amount\": 400,\n            \"discount\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/order",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"order"
+							]
+						},
+						"description": "PAYMENT_TYPE = {\n  CASH: 1,\n  TRANSFER: 2,\n};\n\nSALE_TYPE = {\n  WHOLESALE: 1,\n  RETAIL: 2,\n};"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "getListInvoice",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/invoice?search=&page=&invoice_type_id=5&voucher_type=2&staff_id=37&invoice_object=1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"invoice"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "invoice_type_id",
+									"value": "5",
+									"description": "tên phiếu"
+								},
+								{
+									"key": "voucher_type",
+									"value": "2",
+									"description": "1: Phiếu thu/2: phiếu chi"
+								},
+								{
+									"key": "staff_id",
+									"value": "37"
+								},
+								{
+									"key": "invoice_object",
+									"value": "1",
+									"description": "đối tượng  phiếu (1:khách hàng / 2: nhà cung cấp)"
+								}
+							]
+						},
+						"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+					},
+					"response": []
+				},
+				{
+					"name": "getInvoiceDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/invoice/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"invoice",
+								"2"
+							]
+						},
+						"description": "VOUCHER = { RECEIPT: 1, PAYMENT: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "createInvoice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"voucher_type\": 2,\n    \"reason\": \"Nhập hàng\",\n    \"staff_id\": 68,\n    \"price\": 10000000,\n    \"invoice_type_id\": 7,\n    \"object_type\": 2,\n    \"supplier_id\": 2,\n    \"amount\": 10000000,\n    \"customer_id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/invoice",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"invoice"
+							]
+						},
+						"description": "VOUCHER = { RECEIPT: 1, PAYMENT: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "updateInvoice",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"voucher_type\": 2,\n    \"invoice_type_id\": 5,\n    \"amount\": 2000000,\n    \"staff_id\": 37,\n    \"customer_id\": 3,\n    \"supplier_id\": 2,\n    \"reason\": \"ok\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/invoice",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"invoice"
+							]
+						},
+						"description": "VOUCHER = { RECEIPT: 1, PAYMENT: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteInvoice",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/invoice",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InvoiceType",
+			"item": [
+				{
+					"name": "getListInvoiceType",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/invoice-type?page&search&voucher_type&from_date&to_date&is_active",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"invoice-type"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "search",
+									"value": null
+								},
+								{
+									"key": "voucher_type",
+									"value": null,
+									"description": "1: Phiếu thu, 2 phiếu chi"
+								},
+								{
+									"key": "from_date",
+									"value": null
+								},
+								{
+									"key": "to_date",
+									"value": null
+								},
+								{
+									"key": "is_active",
+									"value": null
+								}
+							]
+						},
+						"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+					},
+					"response": []
+				},
+				{
+					"name": "getInvoiceTypeDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/invoice-type/4",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"invoice-type",
+								"4"
+							]
+						},
+						"description": "VOUCHER = { RECEIPT: 1, PAYMENT: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "createInvoiceType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"name\": \"phiếu ABC\",\n   \"voucher_type\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/invoice-type",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"invoice-type"
+							]
+						},
+						"description": "VOUCHER = { RECEIPT: 1, PAYMENT: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "updateInvoiceType",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"name\": \"phiếu ABC\",\n    \"voucher_type\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/invoice-type",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"invoice-type"
+							]
+						},
+						"description": "VOUCHER = { RECEIPT: 1, PAYMENT: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteInvoiceType",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [\n        6\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/invoice-type",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"invoice-type"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unit",
+			"item": [
+				{
+					"name": "getListUnit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/unit?page&search&from_date&to_date&is_active=",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"unit"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "search",
+									"value": null
+								},
+								{
+									"key": "from_date",
+									"value": null
+								},
+								{
+									"key": "to_date",
+									"value": null
+								},
+								{
+									"key": "is_active",
+									"value": ""
+								}
+							]
+						},
+						"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+					},
+					"response": []
+				},
+				{
+					"name": "getUnitDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/unit/6",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"unit",
+								"6"
+							]
+						},
+						"description": "VOUCHER = { RECEIPT: 1, PAYMENT: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "createUnit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"name\" : \"túi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/unit",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"unit"
+							]
+						},
+						"description": "VOUCHER = { RECEIPT: 1, PAYMENT: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "updateUnit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 7,\n    \"name\": \"kg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/unit",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"unit"
+							]
+						},
+						"description": "VOUCHER = { RECEIPT: 1, PAYMENT: 2, };"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUnit",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": [\n        7\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/unit",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"unit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistic",
+			"item": [
+				{
+					"name": "getTopSellingProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/statistic/topSellingProducts?from_date=&to_date",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"statistic",
+								"topSellingProducts"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": ""
+								},
+								{
+									"key": "to_date",
+									"value": null
+								}
+							]
+						},
+						"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+					},
+					"response": []
+				},
+				{
+					"name": "getStatistic",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/statistic",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"statistic"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "to_date",
+									"value": "1617183080",
+									"disabled": true
+								}
+							]
+						},
+						"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+					},
+					"response": []
+				},
+				{
+					"name": "getSchemaRevenue",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/statistic/schemaRevenue?from_date=1616231539&to_date=1616552811",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"statistic",
+								"schemaRevenue"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "1616231539"
+								},
+								{
+									"key": "to_date",
+									"value": "1616552811"
+								}
+							]
+						},
+						"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": " Finance",
+					"item": [
+						{
+							"name": "getListPayment",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/report/payment?page&search&from_date&to_date&customer_id=&store_id=&invoice_type_id=",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"report",
+										"payment"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "search",
+											"value": null
+										},
+										{
+											"key": "from_date",
+											"value": null
+										},
+										{
+											"key": "to_date",
+											"value": null
+										},
+										{
+											"key": "customer_id",
+											"value": ""
+										},
+										{
+											"key": "store_id",
+											"value": ""
+										},
+										{
+											"key": "invoice_type_id",
+											"value": "",
+											"description": "tên phiếu "
+										}
+									]
+								},
+								"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+							},
+							"response": []
+						},
+						{
+							"name": "getProfit",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/report/profit?page&search&from_date&to_date&store_id=&sale_type=",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"report",
+										"profit"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "search",
+											"value": null
+										},
+										{
+											"key": "from_date",
+											"value": null
+										},
+										{
+											"key": "to_date",
+											"value": null
+										},
+										{
+											"key": "store_id",
+											"value": ""
+										},
+										{
+											"key": "sale_type",
+											"value": "",
+											"description": "1: bán sỉ, 2: bán lẻ, 3: trả hàng "
+										}
+									]
+								},
+								"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+							},
+							"response": []
+						},
+						{
+							"name": "getListDebt",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/report/debt?page&search&from_date&to_date&customer_id=&store_id=&invoice_type_id=",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"report",
+										"debt"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "search",
+											"value": null
+										},
+										{
+											"key": "from_date",
+											"value": null
+										},
+										{
+											"key": "to_date",
+											"value": null
+										},
+										{
+											"key": "customer_id",
+											"value": ""
+										},
+										{
+											"key": "store_id",
+											"value": ""
+										},
+										{
+											"key": "invoice_type_id",
+											"value": "",
+											"description": "tên phiếu "
+										}
+									]
+								},
+								"description": "INVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sale",
+					"item": [
+						{
+							"name": "getListOrder",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/report/order?page&search&from_date&to_date&store_id=&sale_type=",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"report",
+										"order"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "search",
+											"value": null
+										},
+										{
+											"key": "from_date",
+											"value": null
+										},
+										{
+											"key": "to_date",
+											"value": null
+										},
+										{
+											"key": "store_id",
+											"value": ""
+										},
+										{
+											"key": "sale_type",
+											"value": "",
+											"description": "1: bán sỉ, 2: bán lẻ, 3: trả hàng "
+										}
+									]
+								},
+								"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"item": [
+						{
+							"name": "getListGoodsReceipt",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/report/goods-receipt?page&search&from_date&to_date&store_id=&supplier_id=2",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"report",
+										"goods-receipt"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "search",
+											"value": null
+										},
+										{
+											"key": "from_date",
+											"value": null
+										},
+										{
+											"key": "to_date",
+											"value": null
+										},
+										{
+											"key": "store_id",
+											"value": ""
+										},
+										{
+											"key": "supplier_id",
+											"value": "2"
+										}
+									]
+								},
+								"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+							},
+							"response": []
+						},
+						{
+							"name": "getListGoodsIssue",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/report/goods-issue?page&search&from_date&to_date&store_id=",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"report",
+										"goods-issue"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "search",
+											"value": null
+										},
+										{
+											"key": "from_date",
+											"value": null
+										},
+										{
+											"key": "to_date",
+											"value": null
+										},
+										{
+											"key": "store_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+							},
+							"response": []
+						},
+						{
+							"name": "getListGoodsReturn",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/report/goods-issue?page&search&from_date&to_date&store_id=",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"report",
+										"goods-issue"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "search",
+											"value": null
+										},
+										{
+											"key": "from_date",
+											"value": null
+										},
+										{
+											"key": "to_date",
+											"value": null
+										},
+										{
+											"key": "store_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transaction",
+					"item": [
+						{
+							"name": "getListTransaction",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/report/transaction?page&search&from_date&to_date&store_id=",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"report",
+										"transaction"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": null
+										},
+										{
+											"key": "search",
+											"value": null
+										},
+										{
+											"key": "from_date",
+											"value": null
+										},
+										{
+											"key": "to_date",
+											"value": null
+										},
+										{
+											"key": "store_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "uploadImage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "1",
+									"type": "file",
+									"src": "/Users/joro192/Desktop/Screen Shot 2021-03-29 at 16.57.12.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/image",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"image"
+							]
+						},
+						"description": "VOUCHER = {\n  RECEIPT: 1,\n  PAYMENT: 2,\n};\n\nINVOICE_OBJECT = {\n  CUSTOMER: 1,\n  SUPPLIER: 2,\n};"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

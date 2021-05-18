@@ -1,0 +1,142 @@
+{
+  "account": "Tài khoản",
+  "password": "Mật khẩu",
+  "login": "Đăng nhập",
+  "remember_password": "Ghi nhớ mật khẩu",
+  "dialog": {
+    "error": "Lỗi",
+    "cancel": "Đóng",
+    "warning": "Cảnh báo",
+    "info": "Thông tin",
+    "loading": "Đang tải",
+    "select": "Chọn",
+    "success": "Thành công"
+  },
+  "product_category": "Danh mục sản phẩm",
+  "created_at": "Ngày tạo",
+  "expired_at": "Ngày hết hạn",
+  "time_minus": {
+    "hour_ago": "giờ trước",
+    "minute_ago": "phút trước",
+    "just_now": "vừa xong",
+    "day_ago": "ngày trước"
+  },
+  "fail_request": "Yêu cầu thất bại",
+  "error_network": "Lỗi kết nối đến Sever",
+  "please_enter": {
+    "category_name": "Vui lòng nhập Tên nhóm hàng",
+    "account": "Vui lòng nhập Tên tài khoản",
+    "pass": "Vui lòng nhập Mật khẩu",
+    "product_code": "Vui lòng nhập Mã sản phẩm",
+    "product_name": "Vui lòng nhập Tên sản phẩm",
+    "product_unit": "Vui lòng nhập Đơn vị sản phẩm",
+    "retail_price": "Vui lòng nhập Giá bán lẻ",
+    "whole_price": "Vui lòng nhập Giá sỉ",
+    "import_price": "Vui lòng nhập Giá nhập",
+    "receive_price": "Vui lòng nhập Giá nhập",
+    "reason": "Vui lòng nhập lý do"
+  },
+  "please_select": {
+    "category_name": "Vui lòng chọn Nhóm mặt hàng",
+    "voucher_type": "Vui lòng chọn Loại phiếu"
+  },
+  "category_name": "Tên nhóm",
+  "create_category": "Thêm nhóm mặt hàng",
+  "edit_category": "Sửa nhóm mặt hàng",
+  "delete_category": "Xóa nhóm mặt hàng",
+  "store": "Kho hàng",
+  "inventory": "Tồn kho",
+  "import_goods": "Nhập hàng",
+  "import_goods_info": "Thông tin nhập hàng",
+  "payment": {
+    "info": "Thông tin thanh toán",
+    "method": "Hình thức thanh toán"
+  },
+  "search": {
+    "category": "Tìm kiếm nhóm hàng",
+    "product": "Mã, tên sản phẩm",
+    "order": "Tìm kiếm",
+    "spending": "Mã phiếu thu/chi"
+  },
+  "action": {
+    "create": "Thêm mới",
+    "remove": "Xóa",
+    "edit": "Chỉnh sửa",
+    "export": "Xuất excel",
+    "import": "Nhập excel",
+    "update": "Cập nhật",
+    "back": "Quay lại"
+  },
+  "remove": {
+    "product": "Bạn chắc chắn muốn xóa sản phẩm này?"
+  },
+  "retail_price": "Giá bán lẻ",
+  "wholesale_price": "Giá sỉ",
+  "import_price": "Giá nhập",
+  "receive_price": "Giá nhập",
+  "status": "Trạng thái",
+  "product": {
+    "code": "Mã sản phẩm",
+    "name": "Tên sản phẩm",
+    "unit": "Đơn vị tính",
+    "group": "Nhóm mặt hàng",
+    "image": "Hình ảnh sản phẩm",
+    "create": "Tạo sản phẩm",
+    "update": "Cập nhật sản phẩm",
+    "auto_generate_code": "Mã sẽ tự sinh nếu không được nhập."
+  },
+  "active": "Hoạt động",
+  "un_active": "Dừng hoạt động",
+  "success": "Thành công",
+  "notification": "Thông báo",
+  "enter": "Nhập",
+  "title_header": {
+    "dashboard": "Tổng quan",
+    "product": "Sản phẩm",
+    "store": "Kho hàng",
+    "store_list": "Danh sách kho",
+    "inventory": "Tồn kho",
+    "order_list": "Danh sách đơn",
+    "sell": "Bán hàng",
+    "trade": "Giao dịch",
+    "customer": "Khách hàng",
+    "partner": "Đối tác",
+    "supplier": "Nhà cung cấp",
+    "account": "Tài khoản",
+    "import_goods": "Nhập hàng",
+    "import_receipt": "Phiếu nhập hàng",
+    "report": "Báo cáo",
+    "financial_report": "Tài chính",
+    "selling_report": "Bán hàng",
+    "store_report": "Kho hàng",
+    "fund_report": "Sổ quỹ"
+  },
+  "sale_type": {
+    "whole": "Bán sỉ",
+    "retail": "Bán lẻ",
+    "return": "Trả lại"
+  },
+  "order": {
+    "code": "Mã đơn hàng",
+    "type": "Loại đơn",
+    "created_at": "Ngày mua",
+    "customer": "Khách hàng",
+    "staff": "Nhân viên",
+    "store": "Kho hàng",
+    "total_price": "Tổng tiền",
+    "discount": "Giảm giá"
+  },
+  "invoice": {
+    "bill": "Phiếu thu/chi",
+    "title": "Thu chi",
+    "bill_type": "Loại phiếu",
+    "receipts": "Phiếu thu",
+    "payment_bill": "Phiếu chi",
+    "code": "Mã phiếu",
+    "created_at": "Ngày tạo",
+    "staff": "Nhân viên",
+    "reason": "Lý do",
+    "amount": "Số tiền",
+    "object": "Đối tượng"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "name": "tacn",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@reduxjs/toolkit": "^1.5.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/numeral": "^2.0.1",
+    "@types/react-chartjs-2": "^2.5.7",
+    "@types/react-dom": "^17.0.0",
+    "ant-design-pro": "^2.3.2",
+    "antd": "^4.15.3",
+    "apisauce": "^2.0.1",
+    "axios": "^0.21.1",
+    "chart.js": "^3.2.0",
+    "export-from-json": "^1.3.5",
+    "i18next": "^20.0.0",
+    "i18next-browser-languagedetector": "^6.0.1",
+    "i18next-xhr-backend": "^3.2.2",
+    "js-cookie": "^2.2.1",
+    "query-string": "^6.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-fast-compare": "^3.2.0",
+    "react-i18next": "^11.8.10",
+    "react-image-file-resizer": "^0.4.2",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "styled-components": "^5.2.1",
+    "sweetalert": "^2.1.2",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
+    "li": "node generateAssetResource.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^2.2.6",
+    "@types/react": "^17.0.3",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/styled-components": "^5.1.8",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "hjson": "^3.2.1",
+    "prettier": "^2.2.1",
+    "reactotron-apisauce": "^3.0.0",
+    "reactotron-react-js": "^3.3.7",
+    "reactotron-redux": "^3.1.3"
+  }
+}
